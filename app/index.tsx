@@ -3,7 +3,6 @@
 import React from "react"
 
 import { useState } from 'react';
-import { Moon, Sun, Plus, Trash2 } from 'lucide-react';
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
@@ -68,18 +67,14 @@ export default function Home() {
           </h1>
           <button
             onClick={() => setIsDark(!isDark)}
-            className={`p-2 rounded-lg transition-all duration-300 ${
+            className={`p-2 rounded-lg transition-all duration-300 text-2xl ${
               isDark
                 ? 'bg-slate-700 hover:bg-slate-600'
                 : 'bg-blue-100 hover:bg-blue-200'
             }`}
             aria-label="Toggle dark mode"
           >
-            {isDark ? (
-              <Sun className="w-5 h-5 text-yellow-400" />
-            ) : (
-              <Moon className="w-5 h-5 text-slate-700" />
-            )}
+            {isDark ? '☀️' : '🌙'}
           </button>
         </div>
       </header>
@@ -101,7 +96,7 @@ export default function Home() {
                 isDark ? 'text-slate-300' : 'text-slate-600'
               }`}
             >
-              Đây là một website đơn giản được xây dựng với HTML, CSS và JavaScript
+              Đây là một website đơn giản được xây dựng với React, Tailwind CSS
             </p>
             <div className="flex gap-4 justify-center">
               <button
@@ -182,14 +177,13 @@ export default function Home() {
             />
             <button
               onClick={addTask}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
+              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 isDark
                   ? 'bg-purple-600 hover:bg-purple-700 text-white'
                   : 'bg-blue-600 hover:bg-blue-700 text-white'
               }`}
             >
-              <Plus className="w-5 h-5" />
-              Thêm
+              ➕ Thêm
             </button>
           </div>
 
@@ -227,7 +221,7 @@ export default function Home() {
                     }`}
                     aria-label={`Delete task: ${task}`}
                   >
-                    <Trash2 className="w-5 h-5" />
+                    🗑️
                   </button>
                 </li>
               ))
